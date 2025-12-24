@@ -1,0 +1,7 @@
+manifestVersion: 1
+id: repetti-fractal
+name: Fractal Bitcoin Node
+version: "0.2.9-rc2"
+category: Bitcoin
+description: Run a Fractal Bitcoin node on Umbrel (optional pruning).
+port: 8332

@@ -1,0 +1,7 @@
+services:
+  bitcoind:
+    image: fractalbitcoin/fractal:v0.2.9rc2
+    restart: unless-stopped
+    command: bitcoind -datadir=/data
+    volumes:
+      - ./data:/data
