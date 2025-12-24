@@ -2,6 +2,12 @@ services:
   bitcoind:
     image: fractalbitcoin/fractal:v0.2.9rc2
     restart: unless-stopped
-    command: bitcoind -datadir=/data
+    entrypoint: ["bitcoind", "-datadir=/data"]
     volumes:
       - ./data:/data
+    healthcheck:
+      test: ["CMD", "bitcoin-cli", "-datadir=/data", "-rpcwait", "getblockchaininfo"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
